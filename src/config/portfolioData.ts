@@ -70,8 +70,9 @@ export const PORTFOLIO_DATA = {
     phone: '+91 9763333321',
     github: 'https://github.com/palak2309',
     linkedinPlaceholderText: 'LinkedIn Profile being finalized — connect via GitHub or Email',
-    resumeFileName: 'resume.pdf',
-    resumeDownloadPath: '/resume.pdf',
+    resumeFileName: 'Palak_Pathan_Resume.pdf',
+    resumeDownloadPath: '/Palak_Pathan_Resume.pdf',
+    resumeAvailable: true,
     // Contact form backend config: Set Web3Forms access key or Formspree endpoint here if available
     contactFormConfig: {
       web3FormsAccessKey: '', // Set your Web3Forms access key here to enable direct form submissions
@@ -149,19 +150,19 @@ export const PORTFOLIO_DATA = {
       badgeColor: 'purple',
       githubUrl: 'https://github.com/palak2309/Auto_audit',
       liveUrl: 'https://auto-audit-nu.vercel.app/',
-      technologies: ['React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Vercel AI SDK'],
+      technologies: ['React', 'TypeScript', 'Supabase (PostgreSQL)', 'Tailwind CSS', 'Vercel AI SDK', 'Recharts'],
       description:
-        'A comprehensive financial auditing web platform designed to ingest vendor invoice and transaction datasets to identify costly discrepancies, compliance breaches, and financial leakage.',
+        'A team-built financial auditing web platform that imports vendor invoice and payment data from Xero, QuickBooks Online, and Zoho Books to detect financial leakage, compliance anomalies, and overdue liabilities.',
       teamDisclaimer:
-        'Collaborative team project. Engineered with shared contributions across frontend UI, AI prompt pipelines, and database schemas without claiming individual authorship over every module.',
+        'Collaborative team project. Includes LLM-generated findings via the Vercel AI SDK and rule-based checks. AI coding tools were used for parts of development.',
       features: [
-        'Financial dataset ingestion and automated data cleansing',
-        'Duplicate invoice identification and redundant payment detection',
-        'Overpayment alerts and overdue liability reconciliation',
-        'AI-generated discrepancy summaries using Vercel AI SDK',
-        'Secure user authentication and role-based access control (RBAC)',
-        'Interactive financial dashboard visualisations and drill-downs',
-        'One-click CSV audit report generation for accounting teams',
+        'Vendor invoice and payment data import from Xero, QuickBooks Online, and Zoho Books',
+        'Rule-based detection engine for duplicate invoices, duplicate payments, and overpayments',
+        'Overdue liability reconciliation and anomaly alerts',
+        'LLM-generated audit summaries and discrepancy findings via Vercel AI SDK',
+        'Supabase authentication and role-based access control (RBAC)',
+        'Interactive financial metrics and trend analysis using Recharts dashboards',
+        'Clean CSV report export for auditing workflows',
       ],
     },
     {
@@ -172,20 +173,20 @@ export const PORTFOLIO_DATA = {
       badgeColor: 'blue',
       githubUrl: 'https://github.com/palak2309/MST-Tokenisation-',
       liveUrl: 'https://palak2309-mst-tokenisation.tokenestate-palak2309.workers.dev',
-      technologies: ['Solidity', 'OpenZeppelin', 'Hardhat', 'Ethers.js', 'React', 'Cloudflare Workers'],
+      technologies: ['Solidity', 'OpenZeppelin', 'Hardhat', 'Vitest', 'Ethers.js', 'React', 'Cloudflare Workers'],
       description:
-        'A decentralized prototype demonstrating the fractional representation and lifecycle governance of real-estate units utilizing the ERC-1155 multi-token standard on Ethereum-compatible networks.',
+        'A team-built demo MVP for the MST Blockchain Buildathon representing real-estate units as ERC-1155 tokens. Deployed on MST testnet and mainnet (demo units only).',
       teamDisclaimer:
-        'Collaborative team prototype exploring EVM smart contracts, document fingerprinting, and Cloudflare Worker endpoints.',
+        'Collaborative team prototype for the MST Blockchain Buildathon. AI coding tools were used for parts of development.',
       legalDisclaimer:
-        'Prototype/MVP for demonstration purposes only. It does not represent actual property ownership or a licensed investment offering.',
+        'Prototype only. It does not represent actual property ownership or a licensed investment offering.',
       features: [
-        'ERC-1155 multi-token structure for fractional property representation',
-        'SHA-256 cryptographic document fingerprinting for deed verification',
-        'Role-based access control (RBAC) via OpenZeppelin AccessControl',
-        'Investor KYC & regulatory eligibility status verification hooks',
-        'Configurable token staking and reward workflow simulations',
-        'Comprehensive automated smart contract test suite via Hardhat',
+        'ERC-1155 multi-token representation for fractional property units',
+        'Client-side SHA-256 document fingerprinting for deed hash validation',
+        'Role-based access control and investor eligibility compliance checks',
+        'Transfers disabled by default for regulatory simulation safeguards',
+        'Staking contract with configurable pools and emergency pause safeguards',
+        'Smart contracts covered by automated tests (Hardhat, Vitest) and deployed on MST testnet/mainnet',
       ],
     },
     {

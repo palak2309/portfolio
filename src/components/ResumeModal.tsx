@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, FileText, Download, Mail, CheckCircle2, AlertCircle, Copy } from 'lucide-react';
+import { X, FileText, Download, Mail, CheckCircle2, Copy, ExternalLink, Eye } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../config/portfolioData';
 
 interface ResumeModalProps {
@@ -19,10 +19,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   };
 
   const handleDownloadAttempt = () => {
-    // Trigger download of configured resume path
     const link = document.createElement('a');
     link.href = PORTFOLIO_DATA.personal.resumeDownloadPath;
-    link.download = `Palak_Pathan_Resume.pdf`;
+    link.download = PORTFOLIO_DATA.personal.resumeFileName;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -46,8 +45,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               <FileText className="w-5 h-5" />
             </div>
             <div>
-              <h3 id="resume-modal-title" className="text-lg font-bold text-white">
-                Download Resume
+              <h3 id="resume-modal-title" className="text-lg font-bold text-white flex items-center gap-2">
+                <span>Official Resume</span>
+                <span className="text-[10px] font-mono bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">
+                  Verified PDF
+                </span>
               </h3>
               <p className="text-xs text-slate-400">
                 Palak Pathan • B.Sc. Computer Science
@@ -65,48 +67,64 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
         {/* Content Body */}
         <div className="py-5 space-y-4 text-sm text-slate-300">
+          
+          {/* Target Roles Card */}
           <div className="bg-navy-850 border border-slate-800 rounded-xl p-4 space-y-2">
             <div className="flex items-center justify-between text-xs font-mono text-slate-400">
               <span className="flex items-center gap-1.5 text-slate-200 font-semibold">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Target Roles Profile
+                Target Opportunities
               </span>
               <span className="bg-brand-purple/10 text-brand-purple px-2 py-0.5 rounded border border-brand-purple/20">
-                Class of 2027
+                Graduation: 2027
               </span>
             </div>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Software Developer Trainee • Python Developer • AI Applications • Data Analytics (Power BI) • Blockchain Trainee
+              Seeking entry-level Python, Software Development, AI Applications, Power BI Analytics, or Blockchain Developer Trainee roles in Pune or Remote within India.
             </p>
           </div>
 
-          <div className="space-y-3">
+          {/* Action Buttons */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {/* View In Browser */}
+            <a
+              href={PORTFOLIO_DATA.personal.resumeDownloadPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-navy-800 hover:bg-navy-750 border border-slate-700 text-white font-semibold text-xs shadow-sm transition-all"
+            >
+              <Eye className="w-4 h-4 text-brand-cyan" />
+              <span>Preview in Browser</span>
+              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+            </a>
+
+            {/* Download Button */}
             <button
               onClick={handleDownloadAttempt}
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-brand-violet to-brand-blue text-white font-semibold text-sm shadow-glow-purple hover:from-brand-purple hover:to-brand-cyan transition-all active:scale-[0.99]"
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-brand-violet to-brand-blue text-white font-semibold text-xs shadow-glow-purple hover:from-brand-purple hover:to-brand-cyan transition-all active:scale-[0.99]"
             >
               <Download className="w-4 h-4" />
-              Download Resume PDF (`Palak_Pathan_Resume.pdf`)
+              <span>Download PDF</span>
             </button>
-
-            <a
-              href={`mailto:${PORTFOLIO_DATA.personal.email}?subject=Resume%20Inquiry%20-%20Palak%20Pathan`}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-700 bg-navy-800 hover:bg-navy-750 text-slate-200 hover:text-white text-xs font-medium transition-all"
-            >
-              <Mail className="w-3.5 h-3.5 text-brand-blue" />
-              Request Latest Resume Copy via Email
-            </a>
           </div>
 
-          {/* Config Notice for Deployment */}
-          <div className="bg-slate-900/90 border border-slate-800/80 rounded-lg p-3 text-[11px] text-slate-400 space-y-1">
-            <div className="flex items-center gap-1.5 text-slate-300 font-medium">
-              <AlertCircle className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-              <span>Resume Asset Configuration:</span>
+          <a
+            href={`mailto:${PORTFOLIO_DATA.personal.email}?subject=Resume%20Inquiry%20-%20Palak%20Pathan`}
+            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-800 bg-navy-850/80 hover:bg-navy-800 text-slate-300 hover:text-white text-xs font-medium transition-all"
+          >
+            <Mail className="w-3.5 h-3.5 text-brand-blue" />
+            Request Updated Copy via Direct Email
+          </a>
+
+          {/* Verification Badge */}
+          <div className="bg-emerald-950/20 border border-emerald-500/20 rounded-xl p-3 text-xs text-emerald-300 flex items-start gap-2.5">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+            <div className="space-y-0.5">
+              <span className="font-semibold block text-emerald-200">Official Candidate Resume Active</span>
+              <p className="text-[11px] text-emerald-400/80 leading-normal">
+                Uploaded and verified as <code className="font-mono text-emerald-300 font-semibold">{PORTFOLIO_DATA.personal.resumeFileName}</code>. Ready for immediate recruiter download and ATS review.
+              </p>
             </div>
-            <p className="pl-5 leading-normal">
-              To supply your own finalized PDF, place your document as <code className="text-brand-purple font-mono">public/resume.pdf</code>. The download button above is dynamically configured to this location.
-            </p>
           </div>
         </div>
 
