@@ -76,7 +76,7 @@ export const PORTFOLIO_DATA = {
     resumeAvailable: true,
     // Contact form backend config: Loaded dynamically from VITE_WEB3FORMS_ACCESS_KEY env variable
     contactFormConfig: {
-      web3FormsAccessKey: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '',
+      web3FormsAccessKey: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'd7ff9a0a-5272-4a76-96e4-c3695d72be39',
       fallbackToMailto: true,
     }
   },

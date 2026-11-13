@@ -373,17 +373,6 @@ export const Contact: React.FC<ContactProps> = ({ onOpenLinkedInModal }) => {
               </button>
             </form>
 
-            {/* Honest Backend Configuration Disclosure */}
-            <div className="pt-4 border-t border-slate-800 text-[11px] text-slate-400 space-y-1">
-              <div className="flex items-center gap-1.5 text-slate-300 font-semibold">
-                <AlertCircle className="w-3.5 h-3.5 text-brand-purple flex-shrink-0" />
-                <span>Form Service Architecture:</span>
-              </div>
-              <p className="leading-relaxed">
-                By default, this form launches your native email client with pre-filled parameters. To enable direct serverless email forwarding, obtain a free access key from <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer" className="text-brand-purple underline">Web3Forms</a> or Formspree and set <code className="text-white font-mono">web3FormsAccessKey</code> in <code className="text-white font-mono">src/config/portfolioData.ts</code>.
-              </p>
-            </div>
-
           </div>
         </div>
 
