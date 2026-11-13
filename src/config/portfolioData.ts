@@ -11,6 +11,9 @@ export interface Project {
   teamDisclaimer?: string;
   legalDisclaimer?: string;
   features: string[];
+  screenshotUrl: string;
+  screenshotCaption: string;
+  additionalScreenshots?: { title: string; url: string }[];
   imagePlaceholder?: {
     title: string;
     description: string;
@@ -151,6 +154,12 @@ export const PORTFOLIO_DATA = {
       badgeColor: 'purple',
       githubUrl: 'https://github.com/palak2309/Auto_audit',
       liveUrl: 'https://auto-audit-nu.vercel.app/',
+      screenshotUrl: '/images/autoaudit-dashboard.png',
+      screenshotCaption: 'Actual Working AutoAudit Dashboard — Financial Control Center & AI Findings (auto-audit-nu.vercel.app)',
+      additionalScreenshots: [
+        { title: 'Financial Leaks Register', url: '/images/autoaudit-leaks.png' },
+        { title: 'Live Landing Page', url: '/images/autoaudit-live.png' },
+      ],
       technologies: ['React', 'TypeScript', 'Supabase (PostgreSQL)', 'Tailwind CSS', 'Vercel AI SDK', 'Recharts'],
       description:
         'A team-built financial auditing web platform that imports vendor invoice and payment data from Xero, QuickBooks Online, and Zoho Books to detect financial leakage, compliance anomalies, and overdue liabilities.',
@@ -174,6 +183,11 @@ export const PORTFOLIO_DATA = {
       badgeColor: 'blue',
       githubUrl: 'https://github.com/palak2309/MST-Tokenisation-',
       liveUrl: 'https://palak2309-mst-tokenisation.tokenestate-palak2309.workers.dev',
+      screenshotUrl: '/images/tokenestate-app.png',
+      screenshotCaption: 'Actual Working TokenEstate Web App on Cloudflare Workers — Network Selector & BridgeKey Interface',
+      additionalScreenshots: [
+        { title: 'Technical Architecture & Approach', url: '/images/tokenestate-architecture.png' },
+      ],
       technologies: ['Solidity', 'OpenZeppelin', 'Hardhat', 'Vitest', 'Ethers.js', 'React', 'Cloudflare Workers'],
       description:
         'A team-built demo MVP for the MST Blockchain Buildathon representing real-estate units as ERC-1155 tokens. Deployed on MST testnet and mainnet (demo units only).',
@@ -197,6 +211,11 @@ export const PORTFOLIO_DATA = {
       type: 'Data Analytics Project',
       badgeColor: 'amber',
       githubUrl: 'https://github.com/palak2309',
+      screenshotUrl: '/images/smart-metro-dashboard.png',
+      screenshotCaption: 'Actual Power BI Dashboard — 9 Interactive Visuals, 54,882 Passengers, $1.77M Modeled Revenue',
+      additionalScreenshots: [
+        { title: 'Kimball Star Schema Architecture', url: '/images/smart_metro_star_schema.jpg' },
+      ],
       technologies: ['Power BI', 'CSV Datasets', 'Star Schema', 'DAX', 'Data Modeling'],
       description:
         'An end-to-end transit analytics dashboard built from raw automated fare collection (AFC) and train operation CSV datasets. Features a production-grade Kimball Star Schema modeling ridership throughput, corridor demand splits, and revenue yields.',
