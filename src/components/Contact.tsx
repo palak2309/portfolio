@@ -235,18 +235,33 @@ export const Contact: React.FC<ContactProps> = ({ onOpenLinkedInModal }) => {
                   <ExternalLink className="w-3 h-3 text-slate-500 group-hover:text-white" />
                 </a>
 
-                <button
-                  onClick={onOpenLinkedInModal}
-                  className="flex items-center justify-between p-3 rounded-xl bg-navy-850 hover:bg-navy-800 border border-slate-800 text-slate-200 hover:text-brand-blue text-xs transition-colors group text-left"
-                >
-                  <span className="flex items-center gap-2">
-                    <LinkedinIcon className="w-4 h-4 text-brand-blue" />
-                    <span>LinkedIn</span>
-                  </span>
-                  <span className="text-[9px] font-mono bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded border border-blue-500/20">
-                    Info
-                  </span>
-                </button>
+                {personal.linkedinUrl ? (
+                  <a
+                    href={personal.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-xl bg-navy-850 hover:bg-navy-800 border border-slate-800 text-slate-200 hover:text-brand-blue text-xs transition-colors group"
+                  >
+                    <span className="flex items-center gap-2">
+                      <LinkedinIcon className="w-4 h-4 text-brand-blue" />
+                      <span>LinkedIn</span>
+                    </span>
+                    <ExternalLink className="w-3 h-3 text-slate-500 group-hover:text-white" />
+                  </a>
+                ) : (
+                  <button
+                    onClick={onOpenLinkedInModal}
+                    className="flex items-center justify-between p-3 rounded-xl bg-navy-850 hover:bg-navy-800 border border-slate-800 text-slate-200 hover:text-brand-blue text-xs transition-colors group text-left"
+                  >
+                    <span className="flex items-center gap-2">
+                      <LinkedinIcon className="w-4 h-4 text-brand-blue" />
+                      <span>LinkedIn</span>
+                    </span>
+                    <span className="text-[9px] font-mono bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded border border-blue-500/20">
+                      Info
+                    </span>
+                  </button>
+                )}
               </div>
             </div>
 

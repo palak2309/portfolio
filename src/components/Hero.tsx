@@ -151,16 +151,29 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal, onOpenLinkedInMod
             <GithubIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
           </a>
 
-          {/* LinkedIn Placeholder */}
-          <button
-            onClick={onOpenLinkedInModal}
-            className="p-3 rounded-xl bg-navy-850 border border-slate-800 text-slate-300 hover:text-brand-blue hover:border-brand-blue/50 hover:bg-navy-800 transition-all group relative"
-            title="LinkedIn Profile - Profile URL being finalized"
-            aria-label="LinkedIn Profile"
-          >
-            <LinkedinIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-brand-blue rounded-full border-2 border-navy-950"></span>
-          </button>
+          {/* LinkedIn Profile / Placeholder */}
+          {personal.linkedinUrl ? (
+            <a
+              href={personal.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-xl bg-navy-850 border border-slate-800 text-slate-300 hover:text-brand-blue hover:border-brand-blue/50 hover:bg-navy-800 transition-all group"
+              title="LinkedIn Profile"
+              aria-label="LinkedIn Profile"
+            >
+              <LinkedinIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
+          ) : (
+            <button
+              onClick={onOpenLinkedInModal}
+              className="p-3 rounded-xl bg-navy-850 border border-slate-800 text-slate-300 hover:text-brand-blue hover:border-brand-blue/50 hover:bg-navy-800 transition-all group relative"
+              title="LinkedIn Profile - Profile URL being finalized"
+              aria-label="LinkedIn Profile"
+            >
+              <LinkedinIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-brand-blue rounded-full border-2 border-navy-950"></span>
+            </button>
+          )}
 
           {/* Email Mailto */}
           <a

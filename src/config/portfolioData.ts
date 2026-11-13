@@ -66,16 +66,17 @@ export const PORTFOLIO_DATA = {
       location: 'Pune, Maharashtra, India',
     },
     location: 'Pune, Maharashtra, India',
-    email: 'palakpathan23@gmail.com',
-    phone: '+91 9763333321',
-    github: 'https://github.com/palak2309',
+    email: import.meta.env.VITE_CONTACT_EMAIL || 'palakpathan23@gmail.com',
+    phone: import.meta.env.VITE_CONTACT_PHONE || '+91 9763333321',
+    github: import.meta.env.VITE_GITHUB_URL || 'https://github.com/palak2309',
+    linkedinUrl: import.meta.env.VITE_LINKEDIN_URL || '',
     linkedinPlaceholderText: 'LinkedIn Profile being finalized — connect via GitHub or Email',
     resumeFileName: 'Palak_Pathan_Resume.pdf',
-    resumeDownloadPath: '/Palak_Pathan_Resume.pdf',
+    resumeDownloadPath: import.meta.env.VITE_RESUME_URL || '/Palak_Pathan_Resume.pdf',
     resumeAvailable: true,
-    // Contact form backend config: Set Web3Forms access key or Formspree endpoint here if available
+    // Contact form backend config: Loaded dynamically from VITE_WEB3FORMS_ACCESS_KEY env variable
     contactFormConfig: {
-      web3FormsAccessKey: '', // Set your Web3Forms access key here to enable direct form submissions
+      web3FormsAccessKey: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '',
       fallbackToMailto: true,
     }
   },

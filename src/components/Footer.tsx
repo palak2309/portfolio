@@ -89,14 +89,27 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResumeModal, onOpenLinkedI
                 <GithubIcon className="w-4 h-4" />
               </a>
 
-              <button
-                onClick={onOpenLinkedInModal}
-                className="p-2.5 rounded-xl bg-navy-850 border border-slate-800 text-slate-300 hover:text-brand-blue hover:border-brand-blue transition-all"
-                title="LinkedIn Profile Notice"
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon className="w-4 h-4" />
-              </button>
+              {personal.linkedinUrl ? (
+                <a
+                  href={personal.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-xl bg-navy-850 border border-slate-800 text-slate-300 hover:text-brand-blue hover:border-brand-blue transition-all"
+                  title="LinkedIn Profile"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinIcon className="w-4 h-4" />
+                </a>
+              ) : (
+                <button
+                  onClick={onOpenLinkedInModal}
+                  className="p-2.5 rounded-xl bg-navy-850 border border-slate-800 text-slate-300 hover:text-brand-blue hover:border-brand-blue transition-all"
+                  title="LinkedIn Profile Notice"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinIcon className="w-4 h-4" />
+                </button>
+              )}
 
               <a
                 href={`mailto:${personal.email}`}
