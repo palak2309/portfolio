@@ -59,8 +59,17 @@ palak-portfolio/
 ├── .env                      # Local environment configuration (ignored by git)
 ├── public/
 │   ├── favicon.svg           # Custom monogram vector favicon
-│   ├── images/
-│   │   └── smart_metro_star_schema.jpg  # Kimball Star Schema deliverable
+│   ├── documents/            # Authentic PDF documents for patent & credentials
+│   │   ├── Patent_Registration_Certificate_476212-001.pdf
+│   │   ├── Patent_Office_Journal_Publication_44-2026.pdf
+│   │   └── Design_Patent_Representation_Sheets.pdf
+│   ├── images/               # High-resolution project & document screenshots
+│   │   ├── patent-certificate.png
+│   │   ├── patent-journal-page2.png
+│   │   ├── patent-perspective-view.png
+│   │   ├── smart_metro_star_schema.jpg
+│   │   ├── autoaudit-dashboard.png
+│   │   └── tokenestate-app.png
 │   ├── Palak_Pathan_Resume.pdf          # Official uploaded resume PDF
 │   └── Resume.pdf                       # Canonical fallback
 ├── src/
@@ -71,7 +80,8 @@ palak-portfolio/
 │   │   ├── Hero.tsx          # High-impact recruitment hero section
 │   │   ├── About.tsx         # Grounded background & project domains
 │   │   ├── Skills.tsx        # Categorized skills (no fake progress bars)
-│   │   ├── Projects.tsx      # Featured systems, prototypes & modals
+│   │   ├── Projects.tsx      # Featured systems, prototypes & 3D carousel
+│   │   ├── Achievements.tsx  # Design Patent & Document Carousel with modal lightbox
 │   │   ├── Certifications.tsx# Credly verified credentials
 │   │   ├── Education.tsx     # B.Sc. CS details & core coursework
 │   │   ├── Contact.tsx       # Contact details & functional form
