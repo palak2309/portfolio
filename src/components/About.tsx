@@ -160,6 +160,32 @@ export const About: React.FC = () => {
             </div>
           </div>
 
+          {/* Domain 4: Design Patent (Registered Design) */}
+          <div className="glow-card rounded-2xl p-5 border border-slate-800 hover:border-emerald-500/50 transition-all">
+            <div className="flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-sm font-bold text-white">Design Patent (Registered Design)</h4>
+                  <span className="text-[10px] font-mono bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/20">
+                    Reg. 476212-001
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Named co-applicant on an official design patent for a Non-Invasive Blood Glucose Monitoring Patch registered with the Controller General of Patents, Designs and Trade Marks (Class 24-01).
+                </p>
+                <div className="pt-1">
+                  <a href="#achievements" className="text-[11px] font-mono text-brand-purple hover:underline inline-flex items-center gap-1">
+                    <span>View Patent Documents & Gazette</span>
+                    <span>→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

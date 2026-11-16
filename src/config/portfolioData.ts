@@ -1,3 +1,38 @@
+export interface PatentDocument {
+  id: string;
+  title: string;
+  subtitle: string;
+  docNumber: string;
+  date: string;
+  thumbnailUrl: string;
+  pdfUrl: string;
+  fileName: string;
+  badge: string;
+  details: string;
+  alternativeViews?: { name: string; url: string }[];
+}
+
+export interface DesignPatent {
+  achievementTitle: string;
+  patentName: string;
+  designRegistrationNumber: string;
+  serialNumber: string;
+  registrationDate: string;
+  dateOfIssue: string;
+  classNumber: string;
+  classDescription: string;
+  authority: string;
+  journalPublication: string;
+  journalDate: string;
+  journalPage: string;
+  applicants: { name: string; role?: string; isPrimaryStudent?: boolean }[];
+  applicantNote: string;
+  patentAgent: { name: string; registrationNumber: string };
+  noveltyStatement: string;
+  description: string;
+  documents: PatentDocument[];
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -72,8 +107,8 @@ export const PORTFOLIO_DATA = {
     email: import.meta.env.VITE_CONTACT_EMAIL || 'palakpathan23@gmail.com',
     phone: import.meta.env.VITE_CONTACT_PHONE || '+91 9763333321',
     github: import.meta.env.VITE_GITHUB_URL || 'https://github.com/palak2309',
-    linkedinUrl: import.meta.env.VITE_LINKEDIN_URL || '',
-    linkedinPlaceholderText: 'LinkedIn Profile being finalized — connect via GitHub or Email',
+    linkedinUrl: import.meta.env.VITE_LINKEDIN_URL || 'https://www.linkedin.com/in/palak-pathan-390277427/',
+    linkedinPlaceholderText: 'LinkedIn Profile: palak-pathan-390277427',
     resumeFileName: 'Palak_Pathan_Resume.pdf',
     resumeDownloadPath: import.meta.env.VITE_RESUME_URL || '/Palak_Pathan_Resume.pdf',
     resumeAvailable: true,
@@ -241,6 +276,89 @@ export const PORTFOLIO_DATA = {
       },
     },
   ] as Project[],
+
+  patent: {
+    achievementTitle: 'Design Patent – Non-Invasive Blood Glucose Monitoring Patch',
+    patentName: 'NON-INVASIVE BLOOD GLUCOSE MONITORING PATCH',
+    designRegistrationNumber: '476212-001',
+    serialNumber: '259040',
+    registrationDate: '8 October 2025',
+    dateOfIssue: '28 October 2026',
+    classNumber: '24-01',
+    classDescription: 'Class 24-01: Medical and Laboratory Apparatus & Devices',
+    authority: 'The Patent Office, Government of India',
+    journalPublication: 'The Patent Office Journal No. 44/2026',
+    journalDate: '30 October 2026',
+    journalPage: '142399',
+    applicants: [
+      { name: 'Palak Ajit Pathan', role: 'Student, Christ College, Pune', isPrimaryStudent: true },
+      { name: 'Suvarna Mohanrao Nade', role: 'Co-Applicant / Collaborator' },
+      { name: 'Dr. Renu Praveen Pathak', role: 'Professor, Sandip University / Collaborator' },
+      { name: 'Nilima Gaikwad', role: 'Assistant Professor, Christ College / Collaborator' },
+      { name: 'Vandana R. Bias', role: 'Co-Applicant / Collaborator' },
+      { name: 'Navale Madhuri Damodar', role: 'Co-Applicant / Collaborator' },
+      { name: 'Mayuri Pravin Parab', role: 'Co-Applicant / Collaborator' },
+    ],
+    applicantNote: 'Palak Ajit Pathan is one of the seven named applicants (Co-Applicant).',
+    patentAgent: {
+      name: 'Varsha Sinha',
+      registrationNumber: 'IN/PA-6035',
+    },
+    noveltyStatement:
+      'The novelty resides in the shape and configuration of the NON-INVASIVE BLOOD GLUCOSE MONITORING PATCH as illustrated across 7 technical engineering views.',
+    description:
+      'A registered design patent granted by the Controller General of Patents, Designs and Trade Marks, Government of India, under the Designs Act 2000 and Designs Rules 2001. The registration protects the novel ergonomic shape, contoured skin-contact curve, integrated digital read-out display, and bottom optical sensor array for non-invasive glucose monitoring.',
+    documents: [
+      {
+        id: 'registration-certificate',
+        title: 'Certificate of Registration of Design',
+        subtitle: 'Official Registration Certificate issued by The Patent Office, Government of India',
+        docNumber: 'Design No. 476212-001 | Serial No. 259040',
+        date: 'Registered: 08 Oct 2025 | Issued: 28 Oct 2026',
+        thumbnailUrl: '/images/patent-certificate.png',
+        pdfUrl: '/documents/Patent_Registration_Certificate_476212-001.pdf',
+        fileName: 'Patent_Registration_Certificate_476212-001.pdf',
+        badge: 'Official Certificate',
+        details:
+          'Official sealed certificate issued under the Designs Act 2000 and Designs Rules 2001 certifying that the design has been registered in Class 24-01 in respect of its application to the Non-Invasive Blood Glucose Monitoring Patch.',
+      },
+      {
+        id: 'gazette-journal',
+        title: 'The Patent Office Journal Publication',
+        subtitle: 'Official Gazette Entry (The Patent Office Journal No. 44/2026, Page 142399)',
+        docNumber: 'Issue No. 44/2026 | Date: 30/10/2026 | Class 24-01',
+        date: 'Published: 30 October 2026',
+        thumbnailUrl: '/images/patent-journal-page2.png',
+        pdfUrl: '/documents/Patent_Office_Journal_Publication_44-2026.pdf',
+        fileName: 'Patent_Office_Journal_Publication_44-2026.pdf',
+        badge: 'Official Gazette Record',
+        details:
+          'Official statutory publication in the Gazette of the Indian Patent Office displaying all seven applicant names, institutional affiliation at Christ College (Pune), registration date, and official colored design rendering.',
+        alternativeViews: [
+          { name: 'Gazette Entry (Page 2)', url: '/images/patent-journal-page2.png' },
+          { name: 'Journal Cover (Page 1)', url: '/images/patent-journal-cover.png' },
+        ],
+      },
+      {
+        id: 'representation-sheets',
+        title: 'Design Representation & Novelty Specifications',
+        subtitle: '7 Multi-Angle Technical Engineering Views Signed by Patent Agent',
+        docNumber: '7 Engineering Sheets (Perspective, Front, Rear, Top, Bottom, Left, Right)',
+        date: 'Novelty Filing: 07–08 Oct 2025',
+        thumbnailUrl: '/images/patent-perspective-view.png',
+        pdfUrl: '/documents/Design_Patent_Representation_Sheets.pdf',
+        fileName: 'Design_Patent_Representation_Sheets.pdf',
+        badge: 'Engineering Drawings',
+        details:
+          'Comprehensive 7-view technical novelty drawing suite formally signed by Registered Patent Agent Varsha Sinha (IN/PA-6035). Illustrates the ergonomic curved profile, display bezel, and back-side non-invasive sensor array.',
+        alternativeViews: [
+          { name: 'Perspective View', url: '/images/patent-perspective-view.png' },
+          { name: 'Front View (Display)', url: '/images/patent-front-view.png' },
+          { name: 'Rear View (Sensor Grid)', url: '/images/patent-rear-view.png' },
+        ],
+      },
+    ],
+  } as DesignPatent,
 
   certifications: [
     {
